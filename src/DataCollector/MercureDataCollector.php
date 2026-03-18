@@ -22,16 +22,10 @@ use Symfony\Component\Mercure\Debug\TraceablePublisher;
 final class MercureDataCollector extends DataCollector
 {
     /**
-     * @var iterable<TraceablePublisher|TraceableHub>
-     */
-    private $hubs;
-
-    /**
      * @param iterable<TraceablePublisher|TraceableHub> $hubs
      */
-    public function __construct(iterable $hubs)
+    public function __construct(private readonly iterable $hubs)
     {
-        $this->hubs = $hubs;
     }
 
     public function collect(Request $request, Response $response, ?\Throwable $exception = null): void
@@ -92,7 +86,7 @@ final class MercureDataCollector extends DataCollector
      */
     public function getPublishers(): iterable
     {
-        trigger_deprecation('symfony/mercure-bundle', '0.3', 'Method "%s::getPublishers()" is deprecated, use "%s::getHubs()" instead.', __CLASS__, __CLASS__);
+        trigger_deprecation('symfony/mercure-bundle', '0.3', 'Method "%s::getPublishers()" is deprecated, use "%s::getHubs()" instead.', self::class, self::class);
 
         return $this->getHubs();
     }
