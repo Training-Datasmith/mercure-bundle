@@ -2,7 +2,12 @@
     "name": "symfony/mercure-bundle",
     "type": "symfony-bundle",
     "description": "Symfony MercureBundle",
-    "keywords": ["mercure", "push", "sse", "updates"],
+    "keywords": [
+        "mercure",
+        "push",
+        "sse",
+        "updates"
+    ],
     "homepage": "https://symfony.com",
     "license": "MIT",
     "authors": [
@@ -25,10 +30,14 @@
         "symfony/web-link": "^6.4|^7.3|^8.0"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Bundle\\MercureBundle\\": "src/" }
+        "psr-4": {
+            "Symfony\\Bundle\\Mercure_Bundle\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Symfony\\Bundle\\MercureBundle\\Tests\\": "tests/" }
+        "psr-4": {
+            "Symfony\\Bundle\\Mercure_Bundle\\Tests\\": "tests/"
+        }
     },
     "extra": {
         "branch-alias": {
